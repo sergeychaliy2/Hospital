@@ -9,6 +9,8 @@ public class TaskManager : MonoBehaviour
     public List<string> tasks = new List<string>();
 
     private List<TaskItemScript> taskItemScripts = new List<TaskItemScript>();
+    private int pillsCollected = 0;
+    private const int requiredPills = 2;
 
     void Start()
     {
@@ -41,11 +43,29 @@ public class TaskManager : MonoBehaviour
             taskItemScripts[1].CompleteTask();
         }
     }
-    public void CompleteThreeTask()
+
+    public void CompleteThirdTask()
     {
-        if (taskItemScripts.Count > 1)
+        if (taskItemScripts.Count > 2)
         {
             taskItemScripts[2].CompleteTask();
+        }
+    }
+
+    public void CompleteFifthTask()
+    {
+        if (taskItemScripts.Count > 4)
+        {
+            taskItemScripts[4].CompleteTask();
+        }
+    }
+
+    public void PillCollected()
+    {
+        pillsCollected++;
+        if (pillsCollected >= requiredPills)
+        {
+            CompleteFifthTask();
         }
     }
 }
