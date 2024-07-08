@@ -50,6 +50,7 @@ public class TaskManager : MonoBehaviour
         {
             taskItemScripts[2].CompleteTask();
         }
+
     }
 
     public void CompleteFifthTask()
