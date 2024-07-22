@@ -2,7 +2,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class TaskManager : MonoBehaviour
+public interface ITaskManager
+{
+    void AddTask(string task);
+    void CompleteFirstTask();
+    void CompleteSecondTask();
+    void CompleteThirdTask();
+    void CompleteFifthTask();
+    void PillCollected();
+}
+
+public class TaskManager : MonoBehaviour, ITaskManager
 {
     public GameObject taskPrefab;
     public Transform content;
